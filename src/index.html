@@ -4,48 +4,129 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./fonts/fonts.css">
+    <link rel="stylesheet" href="./css/variables.css">
     <link rel="stylesheet" href="bundle.css">
   </head>
-  <body>
-    <header>
-      <a href=""></a>
-      <input type="text" src="" />
-      <div>
-        <button></button>
-        <button></button>
-        <img src="" alt="" />
-        <div>
-          <p>Ramons F.</p>
-          <p>Level 12</p>
+  <body class="body">
+    <header class="header">
+      <div class="header__container">
+        <nav class="header__nav">
+          <a class="logo" href="#">Movie <span class="logo__accent">App</span></a>
+            <form action="#">
+              <label class="visually-hidden" for="search">Search</label>
+              <input id="search" class="header__search-input" type="text" placeholder="Search"/>
+            </form>
+        </nav>
+        <div class="profile">
+          <button class="notify-button button">
+            <i class="fa-solid fa-bell"></i>
+          </button>
+          <button class="chat-button button">
+            <i class="fa-solid fa-comment"></i>
+          </button>
+          <div class="profile__avatar-container">
+            <img class="profile__avatar-image" src="./images/avatar-placeholder.avif" alt="user avatar">
+          </div>
+          <div class="profile__text-container">
+            <p class="profile__name">Pamens F.</p>
+            <p class="profile__level">Level 12</p>
+          </div>
         </div>
       </div>
     </header>
-    <main>
-      <aside>
-        <ul></ul>
+    <main class="main">
+      <aside class="sidebar">
+        <ul class="sidebar__list">
+          <li class="sidebar__item">
+            <h2 class="sidebar__title">Menu</h2>
+            <ul class="sidebar-menu">
+              <li><a class="sidebar-menu__link" href="#">Browse</a></li>
+              <li><a class="sidebar-menu__link" href="#">Watchlist</a></li>
+              <li><a class="sidebar-menu__link" href="#">Cooming soon</a></li>
+            </ul>
+          </li>
+          <li class="sidebar__item">
+            <h2 class="sidebar__title">Social</h2>
+            <ul class="sidebar-menu">
+              <li><a class="sidebar-menu__link" href="#">Friends</a></li>
+              <li><a class="sidebar-menu__link" href="#">Parties</a></li>
+            </ul>
+          </li>
+          <li class="sidebar__item">
+            <h2 class="sidebar__title">General</h2>
+            <ul class="sidebar-menu">
+              <li><a class="sidebar-menu__link" href="#">Settings</a></li>
+              <li><a class="sidebar-menu__link" href="#">Log out</a></li>
+            </ul>
+          </li>
+        </ul>
       </aside>
-      <div>
-        <p></p>
-        <div>
-          <h1>Bladerunner 2049</h1>
-          <p></p>
-          <div>
-            <div>
-              <button></button>
-              <button></button>
+      <section class="content">
+        <div class="banner">
+          <input id="btn-1" name="toggle" class="banner__input" type="radio" checked></input>
+          <input id="btn-2" name="toggle" class="banner__input" type="radio"></input>
+          <input id="btn-3" name="toggle" class="banner__input" type="radio"></input>
+          <!-- <input id="btn-4" name="toggle" class="banner__input" type="radio"></input> -->
+          <div class="banner__slider">
+            <label for="btn-1" class="banner__slider-label label-1"></label>
+            <label for="btn-2" class="banner__slider-label label-2"></label>
+            <label for="btn-3" class="banner__slider-label label-3"></label>
+          </div>
+          <div class="banner__container">
+            <div class="slide banner__img">
+              <div class="slide__content">
+                <div class="slide__stat"></div>
+                <p class="slide__name">Bladerunner 2049</p>
+                <div class="slide__container">
+                  <button class="slide__button slide__about-button">About</button>
+                  <button class="slide__button"><i class="fa-solid fa-plus"></i></button>
+                </div>
+              </div>
+            </div> 
+             <div class="slide banner__img">
+              <div class="slide__content">
+                <div class="slide__stat"></div>
+                <p class="slide__name">Bladerunner 2049</p>
+                <div class="slide__container">
+                  <button class="slide__button slide__about-button">About</button>
+                  <button class="slide__button"><i class="fa-solid fa-plus"></i></button>
+                </div>
+              </div>
             </div>
-            <div>
-              <div></div>
-              <div></div>
-              <div></div>
+            <div class="slide banner__img">
+              <div class="slide__content">
+                <div class="slide__stat"></div>
+                <p class="slide__name">Bladerunner 2049</p>
+                <div class="slide__container">
+                  <button class="slide__button slide__about-button">About</button>
+                  <button class="slide__button"><i class="fa-solid fa-plus"></i></button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div></div>
-      </div>
+      </section>
     </main>
+    <template id="banner-template">
+      <div class="slide banner__img">
+        <div class="slide__content">
+          <div class="slide__stat"></div>
+          <p class="slide__name">Bladerunner 2049</p>
+          <div class="slide__container">
+            <button class="slide__button slide__about-button">About</button>
+            <button class="slide__button"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="label-template">
+      <label for="btn-1" class="banner__slider-label label-1"></label>
+    </template>
+    <script src="https://kit.fontawesome.com/825c0eb42e.js" crossorigin="anonymous"></script>
     <!-- build:js bundle.js -->
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/api.js" defer></script>
     <!-- endbuild -->
   </body>
 </html>

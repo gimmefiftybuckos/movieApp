@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Inter Variable';
+    src:
+      local('Inter-Variable'),
+      url(./Inter-Variable.woff2) format('woff2-variations'),
+      url(./Inter-Variable.woff2) format('woff2 supports variations');
+    font-weight: 350 500;
+    font-display: swap;
+  }
+
+@font-face {
+    font-family: 'Oswald Variable';
+    src:
+      local('Oswald-Variable'),
+      url(./Oswald-Variable.ttf) format('ttf-variations'),
+      url(./Oswald-Variable.ttf) format('ttf supports variations');
+    font-weight: 700 800;
+    font-display: swap;
+  }

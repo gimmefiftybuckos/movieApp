@@ -1,2 +1,196 @@
+@import variables
 
- 
+.body
+    background: $main-background
+    font-family: $main-font
+    padding-inline: 25px
+
+.header 
+    margin-block-start: 40px
+
+
+    &__container
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        margin-inline: auto 
+    &__search-input
+        padding: 15px 30px 15px 50px
+        inline-size: 300px
+        background: inherit
+        font-size: 12px
+        border: 1px solid $nav-color
+        border-radius: 14px
+        color: $nav-color
+        &:focus, &:active 
+            outline: none
+    &__nav
+        display: flex
+        align-items: center
+        gap: 180px
+
+.profile
+    display: flex
+    gap: 20px
+    align-items: center
+    &__avatar-container
+        inline-size: 50px 
+        block-size: 50px
+        border-radius: 50%
+    &__avatar-image
+        border-radius: 50%
+        object-fit: cover
+        inline-size: 100%
+        block-size: 100%
+    &__text-container
+        color: $button-color
+    &__name
+        color: $accent-color
+
+.logo 
+    display: inline-block
+    max-inline-size: 145px
+    color: #fff
+    text-decoration: none
+    font-family: $accent-font
+    font-size: 36px
+    font-weight: 700
+    &__accent
+        color: #FF5F5F
+        margin-inline-start: 40px
+
+.button
+    color: gray
+    font-size: 25px
+    background: inherit
+    border: none
+
+.main
+    @extend .header
+    display: flex
+
+.sidebar
+    color: $nav-color
+    max-inline-size: 325px
+    inline-size: 100%
+    &__list
+        display: flex
+        flex-direction: column
+        gap: 50px
+        min-inline-size: 180px
+    &__item
+        @extend .sidebar__list
+        gap: 25px
+    &__title
+        font-size: 12px
+
+.sidebar-menu
+    @extend .sidebar__list
+    gap: 30px
+    &__link
+        text-decoration: none
+
+.content
+    inline-size: 100%
+
+.banner
+    overflow: hidden
+    border-radius: 20px 
+    &__container
+        display: flex
+        gap: 120px
+        inline-size: calc(300% + 240px)
+        transition: transform 0.8s ease
+    &__img
+        &:nth-child(1)
+            background: var(--poster-1)
+            background-position-y: center
+            background-size: cover
+        &:nth-child(2)
+            background: var(--poster-2)
+            background-position-y: center
+            background-size: cover
+        &:nth-child(3)
+            background: var(--poster-3)
+            background-position-y: center
+            background-size: cover
+    &__input
+        display: none
+    &__slider
+        // position: absolute
+        // right: 100px
+        display: flex
+        justify-content: end
+        gap: 100px
+    &__slider-label
+        display: flex
+        position: relative 
+
+        &::before
+            content: '' 
+            position: absolute
+            top: 265px
+            right: 100px
+            z-index: 1
+            display: block
+            inline-size: 70px
+            block-size: 45px
+            border-radius: 12px 
+            cursor: pointer
+            transition: 0.5s ease
+            &:nth-child(1)
+                @extend .banner__img
+            &:nth-child(2)
+                @extend .banner__img
+            &:nth-child(3)
+                @extend .banner__img
+                
+.slide
+    padding: 40px 45px 
+    inline-size: 100%
+    // max-inline-size: 33.3%
+    max-block-size: 350px
+    block-size: 100%
+    border-radius: 20px
+    &__content
+        margin-block-start: 136px 
+    &__name
+        min-block-size: 90px
+        font-size: 36px 
+        color: $accent-color
+        font-weight: 700
+    &__container
+        // margin-block-start: 43px
+        display: flex
+        gap: 15px
+    &__button
+        padding: 12px 17px
+        color: $accent-color
+        background-color: gray
+        border-radius: 15px
+        border: none
+    &__about-button
+        background-color: #d91f27
+        box-shadow: 0 15px 40px rgb(217 31 39 / .6 )
+
+#btn-1:checked
+    & ~ .banner__container 
+        transform: translate(0)
+    & ~ .banner__slider
+        & .label-1::before
+            transform: scale(1.5)
+            box-shadow: 0 4px 12px rgb(255 255 255 / .8 )
+#btn-2:checked
+    & ~ .banner__container 
+        transform: translate(calc(-33.3% - 41px))
+    & ~ .banner__slider
+        & .label-2::before
+            transform: scale(1.5)
+            box-shadow: 0 4px 12px rgb(255 255 255 / .8 )
+#btn-3:checked
+    & ~ .banner__container 
+        transform: translate(calc(-66.6% - 82px))
+    & ~ .banner__slider
+        & .label-3::before
+            transform: scale(1.5)
+            box-shadow: 0 4px 12px rgb(255 255 255 / .8 )
